@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import * as THREE from "three";
 
 export default function Car({ bodyColor = null }) {
-  const { scene } = useGLTF("/models/car.glb");
+  const { scene } = useGLTF(`${import.meta.env.BASE_URL}models/car.glb`);
 
   useMemo(() => {
     scene.traverse((child) => {
@@ -60,4 +60,4 @@ export default function Car({ bodyColor = null }) {
   );
 }
 
-useGLTF.preload("/models/car.glb");
+useGLTF.preload(`${import.meta.env.BASE_URL}models/car.glb`);
